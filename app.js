@@ -41,8 +41,9 @@ const todoList = document.querySelector("#todo-items");
 const todoForm = document.querySelector(".todo-form");
 
 function renderTodoItems() {
-  const todoItems = JSON.parse(localStorage.getItem("username")) || [];
+  const todoItems = JSON.parse(localStorage.getItem("todoItems")) || [];
   todoList.innerHTML = "";
+  if (todoItems.length === 0) return;
   todoItems.forEach((item) => {
     const li = document.createElement("li");
     li.textContent = item.text;
@@ -51,7 +52,7 @@ function renderTodoItems() {
 }
 function addTodoItem(text) {
   const newItem = {
-    id: JSON.parse(localStorage.getItem("todoItems")) || [],
+    id: JSON.parse(localStorage.getItem("userName")) || "",
     text: text,
   };
   const temp = JSON.parse(localStorage.getItem("todoItems")) || [];
@@ -83,7 +84,6 @@ const imageUrls = [
   "https://fastly.picsum.photos/id/14/2500/1667.jpg?hmac=ssQyTcZRRumHXVbQAVlXTx-MGBxm6NHWD3SryQ48G-o",
   "https://fastly.picsum.photos/id/29/4000/2670.jpg?hmac=rCbRAl24FzrSzwlR5tL-Aqzyu5tX_PA95VJtnUXegGU",
 ];
-
 function displayRandomImage() {
   const randomIndex = Math.floor(Math.random() * imageUrls.length);
   const imageUrl = imageUrls[randomIndex];
@@ -126,5 +126,4 @@ function getLocation() {
       "Geolocation is not supported by your browser";
   }
 }
-
 getLocation();
