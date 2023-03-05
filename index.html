@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Simple Project</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="clock"></div>
+      <div class="weather">
+        <p id="location"></p>
+      </div>
+      <div class="contents">
+        <form class="login-form">
+          <label>Username:</label>
+          <input type="text" id="username-input" /><br />
+          <label>Password:</label>
+          <input type="password" id="password-input" /><br />
+          <button type="submit">Login</button>
+        </form>
+        <div id="user-name"></div>
+        <div class="todo-list">
+          <h2>Todo List</h2>
+          <form class="todo-form">
+            <label for="todo-input">Add a new task:</label>
+            <input type="text" id="todo-input" />
+            <button type="submit" id="submitTodo">Add</button>
+          </form>
+          <ul id="todo-items"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
