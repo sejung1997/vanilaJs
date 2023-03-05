@@ -1,8 +1,3 @@
-// import img1 from "./public/clay-elliot-DLkwX8_B9Ns-unsplash.jpg";
-// import img2 from "./public/gabor-kozmon-a2zK5tC3u1c-unsplash.jpg";
-// import img3 from "./public/marek-piwnicki-pXoNNmHgAlw-unsplash.jpg";
-// import img4 from "./public/nico-baum-jr0GS51wwyE-unsplash.jpg";
-
 function updateTime() {
   const now = new Date();
   const hours = now.getHours().toString().padStart(2, "0");
@@ -11,7 +6,7 @@ function updateTime() {
   const timeString = `${hours}:${minutes}:${seconds}`;
   document.querySelector(".clock").textContent = timeString;
 }
-// setInterval(updateTime, 1000);
+setInterval(updateTime, 1000);
 
 // Login using local storage
 const usernameInput = document.querySelector("#username-input");
@@ -132,4 +127,4 @@ function getLocation() {
   }
 }
 
-// getLocation();
+getLocation();
